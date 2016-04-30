@@ -11,7 +11,7 @@ namespace SONUser\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\Authentication\AuthenticationService;
-use Zend\Authentication\Storage\Session as sessionStorage;
+use Zend\Authentication\Storage\Session as SessionStorage;
 
 use Zend\View\Model\JsonModel;
 

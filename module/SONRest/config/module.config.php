@@ -2,38 +2,40 @@
 /**
  * Created by PhpStorm.
  * User: nelson
- * Date: 25-04-2016
- * Time: 20:38
+ * Date: 27-04-2016
+ * Time: 20:15
  */
 
-namespace SONUser;
-
 return array(
-    'router' => array(
-        'routes' => array(
-            'sonuser-auth' => array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
-                'options' => array(
-                    'route' => '/auth',
-                    'defaults' => array(
-                        'controller' => 'SONUser\Controller\Auth',
-                        'action' => 'index'
-                    )
-                )
-            )
+
+    'controllers' => array(
+        'invokables' => array(
+            'categoria' => 'SONRest\Controller\CategoriaController'
         )
     ),
 
-    'controllers' => array (
-        'invokables' => array(
-            'SONUser\Controller\Auth' => 'SONUser\Controller\AuthController'
+
+    'router' => array(
+      'routes' => array(
+        'rest' => array(
+            'type' => 'Segment',
+            'options' => array(
+                'route' => '/api/:controller[/:id[/]]',
+                'constraints' => array(
+                    'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                    'id'         => '[a-zA-Z0-9_-]*'
+                )
+
+            )
         )
+      )
     ),
 
     'view_manager' => array(
-        'strategies' =>array(
+        'strategies' => array(
             'ViewJsonStrategy'
         )
+
     ),
 
     'doctrine' => array(
@@ -51,13 +53,6 @@ return array(
         )
     )
 );
-
-
-
-
-
-
-
 
 
 

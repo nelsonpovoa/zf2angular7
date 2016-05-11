@@ -1,8 +1,11 @@
 
-<html ng-app>
+<html ng-app="Categorias">
     <head>
         <title> ZF2 + Angular </title>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-resource.min.js"></script>
+
         <link href="css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
     </head>
     <body>
@@ -32,15 +35,27 @@
             </div>
         </div>
 
-        <?=$this->content;?>
+        <!-- ?=$this->content;? -->
 
-        <div id="footer">
-            <div class="container">
-                <p class="text-muted credit">School of Net.</p>
+        <div class="container">
+            <div class="page-header" ng-controller="CategoriasCtrl">
+                <br>
+                <!-- h3>{{nome}}</h3 -->
+                <div ng-view></div>
+            </div>
+
+            <div id="footer">
+                <div class="container">
+                    <p class="text-muted credit">School of Net.</p>
+                </div>
             </div>
         </div>
+
+
     </div>
 
+    <script src="projetoangular/Categorias.js"></script>
+    <script src="projetoangular/CategoriasCtrl.js"></script>
 
     <!-- div ng-controller="CtrlApp">
 
